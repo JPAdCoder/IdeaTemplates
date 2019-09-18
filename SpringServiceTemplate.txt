@@ -1,0 +1,37 @@
+    @Autowired
+    $pojo$Mapper m$pojo$Mapper;
+
+    public Integer add($pojo$ $pojo$) {
+        if (null != m$pojo$Mapper.queryById($pojo$.getId())) {
+            return 0;
+        }
+        m$pojo$Mapper.add($pojo$);
+        return 1;
+    }
+
+    public Integer delete$pojo$ById(Integer $pojo$Id) {
+        if (null == m$pojo$Mapper.queryById($pojo$Id)) {
+            return 0;
+        }
+        m$pojo$Mapper.deleteById($pojo$Id);
+        return 1;
+    }
+
+    public Integer updateById($pojo$ $pojo$) {
+        if (null == m$pojo$Mapper.queryById($pojo$.getId())) {
+            return 0;
+        }
+        m$pojo$Mapper.update($pojo$);
+        return 1;
+    }
+
+    public List<$pojo$> queryAll$pojo$() {
+        return m$pojo$Mapper.queryAll();
+    }
+
+    public Integer queryById(Integer $pojo$Id) {
+        if(null == m$pojo$Mapper.queryById($pojo$Id)){
+            return 0;
+        }
+        return 1;
+    }

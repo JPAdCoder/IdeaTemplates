@@ -1,0 +1,97 @@
+
+logger = LoggerFactory.getLogger($pojo$Controller.class);
+
+    @Autowired
+    $pojo$Service m$pojo$Service;
+
+    @RequestMapping("/add")
+    public AjaxResult add$pojo$($pojo$ $pojo$) {
+        AjaxResult ajaxResult = new AjaxResult();
+        Map<String, Object> map = new HashMap<>();
+        try {
+            Integer code = m$pojo$Service.add($pojo$);
+            map.put("code", code);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        } catch (Exception e) {
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+            logger.error(" add Error: " + e.getMessage());
+        }
+        return ajaxResult;
+    }
+
+    @RequestMapping("/delete")
+    public AjaxResult delete$pojo$ById(Integer $pojo$Id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        Map<String, Object> map = new HashMap<>();
+        try {
+            Integer code = m$pojo$Service.delete$pojo$ById($pojo$Id);
+            map.put("code", code);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        } catch (Exception e) {
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+            logger.error(" delete Error: " + e.getMessage());
+        }
+        return ajaxResult;
+    }
+
+    @RequestMapping("/update")
+    public AjaxResult updateById($pojo$ $pojo$) {
+        AjaxResult ajaxResult = new AjaxResult();
+        Map<String, Object> map = new HashMap<>();
+        try {
+            Integer code = m$pojo$Service.updateById($pojo$);
+            map.put("code", code);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        } catch (Exception e) {
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+            logger.error(" add Error: " + e.getMessage());
+        }
+        return ajaxResult;
+    }
+
+    @RequestMapping("/queryById")
+    public AjaxResult queryById(Integer $pojo$Id){
+        AjaxResult ajaxResult = new AjaxResult();
+        Map<String, Object>map = new HashMap<>();
+        try{
+            Integer code = m$pojo$Service.queryById($pojo$Id);
+            map.put("code", code);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        }catch (Exception e){
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+        }
+        return ajaxResult;
+    }
+
+    @RequestMapping("/queryAll")
+    public AjaxResult queryAll$pojo$() {
+        AjaxResult ajaxResult = new AjaxResult();
+        Map<String, Object> map = new HashMap<>();
+        try {
+            List<$pojo$> $pojo$List = m$pojo$Service.queryAll$pojo$();
+            map.put("List", $pojo$List);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        } catch (Exception e) {
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+            logger.error(" query Error: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return ajaxResult;
+    }
+
+    

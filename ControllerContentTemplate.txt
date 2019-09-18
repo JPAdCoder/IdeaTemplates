@@ -1,0 +1,12 @@
+jaxResult ajaxResult = new AjaxResult();
+        Map<String, Object> map = new HashMap<>();
+        try {
+            map.put("code", code);
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(true);
+        } catch (Exception e) {
+            map.put("Error", e.getMessage());
+            ajaxResult.setData(map);
+            ajaxResult.setSuccess(false);
+        }
+        return ajaxResult;

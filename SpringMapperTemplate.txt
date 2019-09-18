@@ -1,0 +1,12 @@
+SELECT * FROM t_goods WHERE ID = #{id}")
+    $pojo$ queryById(int id);
+
+    void add($pojo$ $pojo$);
+
+    @Delete("DELETE FROM t_goods WHERE ID = #{goodId}")
+    void deleteById(Integer $pojo$Id);
+
+    void update($pojo$ $pojo$);
+
+    @Select("SELECT * FROM t_goods")
+    List<$pojo$> queryAll();
